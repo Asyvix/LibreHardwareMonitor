@@ -26,7 +26,7 @@ namespace OpenHardwareMonitor.Hardware.CPU {
       for (int i = 0; i < 64; i++) {
         try {
           threads.Add(new CPUID(i));
-        } catch (ArgumentOutOfRangeException) { }
+        } catch (ArgumentOutOfRangeException) { break;}
       }
 
       SortedDictionary<uint, List<CPUID>> processors =
